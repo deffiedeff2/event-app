@@ -1,0 +1,1346 @@
+/* Font Definition */
+@font-face {
+    font-family: 'Satoshi';
+    src: url('/src/assets/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Medium.woff2') format('woff2');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+    font-display: swap; /* Use fallback while loading */
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('/src/assets/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Bold.woff2') format('woff2');
+    font-weight: 700; /* Bold */
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Optional: Add Italic or other weights if needed */
+/*
+@font-face {
+    font-family: 'Satoshi';
+    src: url('/src/assets/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-MediumItalic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Satoshi';
+    src: url('/src/assets/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+*/
+
+/* Basic Reset & Cyberpunk Theme */
+:root {
+    --cyberpunk-black: #0a0a0a;
+    --cyberpunk-dark-gray: #1a1a1a;
+    --cyberpunk-gray: #2a2a2a;
+    --cyberpunk-light-gray: #3a3a3a;
+    --cyberpunk-accent: #ffffff;
+    --cyberpunk-border: var(--cyberpunk-gray);
+    --chakra-colors-gray-800: var(--cyberpunk-black);
+    --chakra-colors-gray-700: var(--cyberpunk-dark-gray);
+    --chakra-colors-gray-600: var(--cyberpunk-gray);
+    --chakra-colors-gray-400: var(--cyberpunk-light-gray);
+    --chakra-colors-gray-200: #ffffff;
+    --chakra-colors-white: #ffffff;
+    --chakra-colors-blue-500: var(--cyberpunk-accent);
+    --chakra-colors-blue-600: var(--cyberpunk-accent);
+    --chakra-colors-red-500: #ff0044;
+    --chakra-fontSizes-md: 1rem;
+    --chakra-fontSizes-lg: 1.125rem;
+    --chakra-fontSizes-xl: 1.25rem;
+    --chakra-fontSizes-2xl: 1.5rem;
+    --chakra-space-4: 1rem;
+    --chakra-space-6: 1.5rem;
+    --chakra-space-8: 2rem;
+    --chakra-space-2: 0.5rem;
+    --chakra-space-3: 0.75rem;
+    --chakra-radii-md: 0.375rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.02em;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Satoshi', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    background-color: var(--cyberpunk-black);
+    color: var(--chakra-colors-gray-200);
+    font-size: var(--chakra-fontSizes-md);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+#root {
+    height: 100%;
+}
+
+.container {
+    max-width: 800px;
+    margin: var(--chakra-space-8) auto;
+    padding: var(--chakra-space-6);
+    background-color: var(--cyberpunk-dark-gray);
+    border-radius: var(--chakra-radii-md);
+    position: relative;
+    z-index: 1;
+    border: 1px solid var(--cyberpunk-border);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: var(--chakra-space-8);
+}
+
+h1, h2 {
+    color: var(--cyberpunk-accent);
+    margin-bottom: var(--chakra-space-6);
+    text-align: center;
+    font-weight: 700;
+}
+
+h1 { font-size: var(--chakra-fontSizes-2xl); }
+h2 { font-size: var(--chakra-fontSizes-xl); }
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: var(--cyberpunk-accent);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: var(--chakra-space-4);
+    background-color: var(--cyberpunk-black);
+    border: 1px solid var(--cyberpunk-border);
+    border-radius: var(--chakra-radii-md);
+    color: var(--chakra-colors-gray-200);
+    font-size: var(--chakra-fontSizes-md);
+    font-family: inherit;
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--chakra-space-4);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--cyberpunk-light-gray);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--cyberpunk-accent);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+button {
+    display: inline-block;
+    background-color: var(--cyberpunk-black);
+    color: var(--cyberpunk-accent);
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--cyberpunk-border);
+    border-radius: var(--chakra-radii-md);
+    font-size: var(--chakra-fontSizes-md);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    margin-top: var(--chakra-space-4);
+    font-family: inherit;
+}
+
+button:hover {
+    background-color: var(--cyberpunk-accent);
+    color: var(--cyberpunk-black);
+    border-color: var(--cyberpunk-accent);
+}
+
+button.secondary {
+    background-color: var(--cyberpunk-gray);
+    border-color: var(--cyberpunk-light-gray);
+    color: var(--chakra-colors-white);
+    margin-top: var(--chakra-space-4);
+}
+
+button.secondary:hover {
+    background-color: var(--cyberpunk-light-gray);
+    border-color: var(--chakra-colors-white);
+}
+
+.link-button {
+    background: none;
+    border: none;
+    color: var(--cyberpunk-accent);
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    font-size: var(--chakra-fontSizes-md);
+    margin-top: var(--chakra-space-4);
+    display: inline;
+    width: auto;
+    text-transform: none;
+}
+
+.link-button:hover {
+    opacity: 0.8;
+    background: none;
+}
+
+.form-group {
+    margin-bottom: var(--chakra-space-6);
+}
+
+.error-message {
+    color: var(--chakra-colors-red-500);
+    margin-top: -0.5rem;
+    margin-bottom: var(--chakra-space-4);
+    font-size: 0.875rem;
+    min-height: 1.2em;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Event View Specific Styles */
+#view-event-section {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(10, 10, 10, 0.9);
+    padding: var(--chakra-space-8);
+    border-radius: var(--chakra-radii-md);
+    margin-top: var(--chakra-space-8);
+    border: 1px solid var(--cyberpunk-border);
+}
+
+.event-image-display {
+    display: block;
+    max-width: 100%;
+    max-height: 400px;
+    margin: 0 auto var(--chakra-space-6) auto;
+    border-radius: var(--chakra-radii-md);
+    object-fit: cover;
+    border: 1px solid var(--cyberpunk-border);
+}
+
+.event-display h2 {
+    font-size: var(--chakra-fontSizes-2xl);
+    margin-bottom: var(--chakra-space-4);
+}
+
+.event-display p {
+    margin-bottom: var(--chakra-space-4);
+    font-size: var(--chakra-fontSizes-lg);
+}
+
+.event-display .description {
+    font-size: var(--chakra-fontSizes-md);
+    white-space: pre-wrap;
+    background: var(--cyberpunk-dark-gray);
+    padding: var(--chakra-space-4);
+    border-radius: var(--chakra-radii-md);
+    text-align: left;
+    margin-top: var(--chakra-space-6);
+    border: 1px solid var(--cyberpunk-border);
+}
+
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    background-color: var(--cyberpunk-black);
+}
+
+/* Public Events Grid */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--chakra-space-4);
+    margin-top: var(--chakra-space-4);
+}
+
+.event-card {
+    background-color: var(--cyberpunk-dark-gray);
+    border: 1px solid var(--cyberpunk-yellow);
+    border-radius: var(--chakra-radii-md);
+    padding: var(--chakra-space-4);
+    margin-bottom: var(--chakra-space-4);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.event-card:hover {
+    /* transform: translateY(-3px); */ /* Remove hover effect */
+    background-color: var(--cyberpunk-darker-gray);
+}
+
+.event-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: var(--chakra-radii-sm);
+    margin-bottom: var(--chakra-space-3);
+}
+
+.event-card h3 {
+    color: var(--cyberpunk-accent);
+    margin-bottom: var(--chakra-space-4);
+}
+
+/* Icon Navigation Styles */
+.icon-nav-container {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: var(--chakra-space-2) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--chakra-space-4);
+    z-index: 990;
+    width: 60px;
+    margin-left: var(--chakra-space-4); /* Add left margin */
+}
+
+.icon-nav-button {
+    background: none;
+    border: none;
+    padding: var(--chakra-space-4);
+    margin: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 0;
+    transition: background-color 0.2s ease-in-out; /* Revert transition */
+    color: var(--chakra-colors-white);
+    /* opacity: 0.5; */ /* Remove opacity from button */
+}
+
+.icon-nav-button svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    opacity: 0.5; /* Dim icons by default */
+    transition: opacity 0.2s ease-in-out; /* Add transition to icon */
+}
+
+/* Brighten icon on hover or when active */
+.icon-nav-button:hover svg,
+.icon-nav-button.active svg {
+    opacity: 1;
+}
+
+.icon-nav-button.logout-button {
+    margin-top: auto;
+    padding-top: var(--chakra-space-4);
+    padding-bottom: var(--chakra-space-4);
+}
+
+/* Remove explicit fill change on hover - rely on opacity change */
+/* .icon-nav-button:hover svg { */
+/*    fill: var(--chakra-colors-white); */
+/* } */
+
+.icon-nav-button.active svg {
+    /* fill: var(--some-active-color); */ /* Keep commented */
+}
+
+.icon-nav-button.logout-button:hover svg {
+    /* fill: var(--chakra-colors-white); */ /* Remove fill change */
+    opacity: 1; /* Ensure logout icon brightens */
+}
+
+/* Remove Old Nav Styles (Hamburger/Sidebar) */
+/* Selectively remove or comment out .hamburger-button, .sidebar, .nav-overlay, etc. */
+.hamburger-button,
+.sidebar,
+.nav-overlay,
+.nav-header,
+.nav-links,
+.close-button {
+    display: none !important; /* Hide old nav elements definitively */
+}
+
+/* Profile Styles */
+.profile-header {
+    text-align: center;
+    margin-bottom: var(--chakra-space-8);
+}
+
+.profile-picture-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--chakra-space-4);
+}
+
+.profile-picture,
+.profile-picture-placeholder,
+.nav-profile-picture,
+.nav-profile-picture-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--cyberpunk-border);
+}
+
+.nav-profile-picture,
+.nav-profile-picture-placeholder {
+    width: 48px;
+    height: 48px;
+}
+
+.profile-picture-placeholder,
+.nav-profile-picture-placeholder {
+    background-color: var(--cyberpunk-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--cyberpunk-accent);
+}
+
+.nav-profile-picture-placeholder {
+    font-size: 1.5rem;
+}
+
+.change-picture-button {
+    width: auto;
+    padding: 0.5rem 1rem;
+    margin: 0;
+}
+
+.success-message {
+    color: #00cc00;
+    background-color: rgba(0, 204, 0, 0.1);
+    text-align: center;
+    padding: var(--chakra-space-2);
+    border-radius: var(--chakra-radii-md);
+    margin-bottom: var(--chakra-space-4);
+    font-weight: bold;
+}
+
+/* Update Nav Header Styles */
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: var(--chakra-space-4);
+}
+
+.profile-info h3 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Dashboard Specific Styles */
+.error-message.phone-prompt {
+    background-color: rgba(255, 0, 68, 0.1); /* Slight red background */
+    border: 1px solid var(--chakra-colors-red-500);
+    padding: var(--chakra-space-4);
+    border-radius: var(--chakra-radii-md);
+    margin-bottom: var(--chakra-space-6);
+    color: var(--chakra-colors-white); /* Ensure text is readable */
+}
+
+.error-message.phone-prompt .link-button {
+    color: var(--cyberpunk-accent); /* White link */
+    font-weight: bold;
+}
+
+.dashboard-controls {
+    display: flex;
+    gap: var(--chakra-space-4);
+    margin-top: var(--chakra-space-6);
+    margin-bottom: var(--chakra-space-4);
+}
+
+.dashboard-search {
+    flex-grow: 1; /* Allow search to take available space */
+    margin-bottom: 0 !important; /* Override default input margin */
+}
+
+.dashboard-sort {
+    margin-bottom: 0 !important; /* Override default select margin */
+    min-width: 180px; /* Give sort dropdown some space */
+}
+
+.dashboard-event-list {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--chakra-space-6);
+}
+
+.dashboard-event-item {
+    background-color: var(--cyberpunk-black);
+    border: 1px solid var(--cyberpunk-border);
+    border-radius: var(--chakra-radii-md);
+    margin-bottom: var(--chakra-space-4);
+    padding: var(--chakra-space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--chakra-space-4);
+}
+
+.event-item-thumbnail {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: var(--chakra-radii-md);
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.event-item-info {
+    flex-grow: 1; /* Allow info to take available space */
+    display: flex;
+    flex-direction: column; /* Stack title/date/status vertically */
+    gap: 0.2rem;
+}
+
+.event-item-title {
+    font-weight: 700;
+    color: var(--cyberpunk-accent);
+}
+
+.event-item-date {
+    font-size: 0.9em;
+    color: var(--cyberpunk-light-gray);
+}
+
+.event-item-status {
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.event-item-status.public {
+    color: #00ff00; /* Example: Green for public */
+}
+
+.event-item-status.private {
+    color: var(--chakra-colors-red-500); /* Example: Red for private */
+}
+
+.event-item-actions {
+    display: flex;
+    gap: var(--chakra-space-4);
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.event-item-actions .link-button {
+    margin: 0;
+    padding: 0.25rem; /* Slightly more clickable area */
+}
+
+.event-item-actions .delete-button {
+    color: var(--chakra-colors-red-500);
+}
+
+.event-item-actions .delete-button:hover {
+    color: #ffffff;
+    background-color: var(--chakra-colors-red-500);
+    text-decoration: none;
+    opacity: 1;
+}
+
+/* Image Upload Styles */
+.image-upload-area {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.image-upload-area:hover {
+  border-color: var(--cyberpunk-yellow) !important;
+}
+
+.image-upload-area.dragging {
+  background-color: rgba(255, 255, 0, 0.05) !important;
+  border-color: var(--cyberpunk-yellow) !important;
+  transform: scale(1.01);
+}
+
+.image-upload-area div[class] {
+  opacity: 0;
+  color: white;
+  font-weight: bold;
+}
+
+.image-upload-area:hover div[class] {
+  opacity: 1 !important;
+}
+
+/* Auth Form Styles */
+.auth-toggle {
+    margin-top: var(--chakra-space-4);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.auth-toggle button {
+    background: none;
+    border: none;
+    color: var(--cyberpunk-accent);
+    text-decoration: underline;
+    padding: 0;
+    display: inline;
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+}
+
+.auth-toggle button:hover {
+    opacity: 0.8;
+    background: none;
+    color: var(--cyberpunk-accent);
+}
+
+input[type="password"] {
+    letter-spacing: 0.1em;
+    font-family: monospace;
+}
+
+/* Landing Page Two-Column Layout */
+.landing-page-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal columns, adjust ratio if needed e.g., 2fr 1fr */
+    gap: var(--chakra-space-8);
+    max-width: 1200px; /* Increase max-width for two columns */
+    margin: var(--chakra-space-8) auto;
+    padding: var(--chakra-space-6);
+    align-items: start; /* Align items at the start of the grid cell */
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--chakra-space-6); /* Gap between wrappers */
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    position: sticky; /* Make the right column sticky */
+    top: var(--chakra-space-8); /* Adjust top offset as needed */
+}
+
+/* Remove Grid for Events inside Left Column */
+.events-grid {
+    display: block; /* Override grid display */
+    grid-template-columns: none; /* Remove grid columns */
+    gap: 0; /* Remove grid gap */
+    margin-top: 0; /* Reset margin if needed */
+}
+
+/* Event Card Wrapper Styles */
+.event-card-wrapper {
+    position: relative; /* Keep relative for potential future overlays, but not needed for current positioning */
+    margin-bottom: var(--chakra-space-6); /* Add back margin below the entire wrapper */
+}
+
+/* Event Info Header (Creator + Time) */
+.event-header-info {
+    display: flex;
+    justify-content: space-between; /* Pushes creator left, time right */
+    align-items: center;
+    margin-bottom: var(--chakra-space-4); /* Ensure space below header, above card */
+}
+
+/* Event Creator Info Styles - Back in Flow */
+.event-creator-info {
+    display: flex;
+    align-items: center;
+    gap: var(--chakra-space-2);
+    padding: 0; /* Remove padding, handled by header */
+    margin-bottom: 0; /* Remove margin, handled by header */
+    cursor: pointer; /* Ensure cursor is pointer */
+}
+
+/* Styles for Creator Image/Placeholder within Header */
+.event-header-info .creator-profile-img {
+    width: 35px; 
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--cyberpunk-border);
+}
+
+.event-header-info .creator-profile-img.placeholder {
+    width: 35px; 
+    height: 35px;
+    background-color: var(--cyberpunk-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem; 
+    font-weight: bold;
+    color: var(--cyberpunk-accent);
+    border-radius: 50%; 
+}
+
+/* Style for Creator Name within Header */
+.event-header-info .creator-name {
+    font-size: 0.9rem; 
+    font-weight: 500;
+    color: var(--cyberpunk-accent);
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis if name is too long */
+    max-width: 150px; /* Optional: constrain max width */
+}
+
+/* Event Relative Time Styles */
+.event-relative-time {
+    font-size: 1rem; /* Smaller font size */
+    color: var(--cyberpunk-accent); /* Muted color -> CHANGE TO ACCENT WHITE */
+    opacity: 1;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Adjust Event Card Styles for Left Column */
+.left-column .event-card {
+    background-color: var(--cyberpunk-dark-gray);
+    /* border: 1px solid var(--cyberpunk-border); */ /* REMOVE border */
+    width: 100%;
+    padding: 0; 
+    overflow: hidden; 
+    /* border-radius: var(--chakra-radii-md); */ /* REMOVE border-radius */
+    margin-top: 0; /* Ensure no top margin */
+}
+
+.left-column .event-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block; 
+    /* border-radius: 0; */ /* REMOVE old radius reset */
+    border: 1px solid var(--cyberpunk-border); /* ADD border */
+    border-radius: var(--chakra-radii-md); /* ADD border-radius */
+}
+
+/* Event Card Details Padding */
+.event-card-details {
+    padding: var(--chakra-space-4);
+    padding-left: 0;
+}
+
+/* Interaction Bar Styles */
+.interaction-bar-container {
+    display: flex;
+    align-items: center;
+    gap: var(--chakra-space-4);
+    padding: var(--chakra-space-3) 0;
+    margin: var(--chakra-space-2) 0;
+}
+
+.interaction-item {
+    display: flex;
+    align-items: center;
+    gap: var(--chakra-space-2); /* Space between icon and count */
+    color: var(--cyberpunk-accent); /* Default color for icon and text */
+    cursor: default; /* Default cursor */
+}
+
+.interaction-item.clickable {
+    cursor: pointer; /* Pointer if clickable */
+}
+
+.interaction-icon-wrapper {
+    width: 18px; /* Icon size */
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.interaction-icon-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: currentColor; /* Inherit color from .interaction-item */
+}
+
+.interaction-count {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1; /* Align text vertically */
+}
+
+.left-column .event-card h3 {
+    font-size: var(--chakra-fontSizes-lg);
+    margin-bottom: var(--chakra-space-2);
+}
+
+/* Adjust Right Column Elements */
+.right-column h1,
+.right-column h2 {
+    text-align: left;
+    margin-bottom: var(--chakra-space-2);
+}
+
+.right-column p {
+    text-align: left;
+}
+
+.right-column button {
+    width: auto; /* Allow buttons to size based on content */
+    margin-top: 0;
+}
+
+.right-column > button {
+     margin-bottom: var(--chakra-space-8); /* Space below login button */
+}
+
+/* Public Profile Layout */
+.public-profile-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Or adjust ratio, e.g., 2fr 1fr */
+    gap: var(--chakra-space-8);
+    max-width: 1200px;
+    margin: var(--chakra-space-8) auto;
+    padding: var(--chakra-space-6);
+    align-items: start;
+}
+
+.public-profile-layout .container {
+    /* Override default container styles if needed */
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+/* Public Profile Info (Right Column) */
+.right-column.public-profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items in the profile column */
+    text-align: center;
+    position: sticky;
+    top: var(--chakra-space-8);
+    padding: var(--chakra-space-6);
+    background-color: var(--cyberpunk-dark-gray);
+    border: 1px solid var(--cyberpunk-border);
+    border-radius: var(--chakra-radii-md);
+}
+
+.public-profile-picture {
+    width: 120px; /* Larger profile picture */
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--cyberpunk-border);
+    margin-bottom: var(--chakra-space-4);
+}
+
+.public-profile-picture.placeholder {
+    background-color: var(--cyberpunk-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem; /* Larger initial */
+    font-weight: bold;
+    color: var(--cyberpunk-accent);
+}
+
+.public-profile-display-name {
+    font-size: var(--chakra-fontSizes-xl);
+    color: var(--cyberpunk-accent);
+    margin-bottom: var(--chakra-space-2);
+  text-align: center;
+}
+
+.public-profile-bio {
+    font-size: var(--chakra-fontSizes-md);
+    color: var(--chakra-colors-gray-200);
+    opacity: 0.8;
+    margin-bottom: var(--chakra-space-6);
+    text-align: center;
+    white-space: pre-wrap; /* Respect line breaks in bio */
+    max-width: 100%; /* Prevent overflow */
+}
+
+/* Adjust left column card structure for consistency if needed */
+.public-profile-layout .left-column .event-card-wrapper .event-creator-info {
+    /* Styles for creator info on public profile page */
+    /* Example: maybe hide it since it's redundant? */
+    /* display: none; */ 
+}
+
+/* === NEW: Public Profile Event Grid Styles === */
+
+/* Apply grid layout to the left column within the public profile */
+.public-profile-layout .left-column {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: var(--chakra-space-4); /* Gap between cards */
+    /* Override previous flex settings if any */
+    flex-direction: row; 
+    align-items: start; /* Align grid items to the top */
+}
+
+/* Style the wrapper for each grid item */
+.public-profile-layout .left-column .event-card-wrapper {
+    position: relative; /* For potential absolute positioning inside if needed */
+    width: 100%;
+    margin-bottom: 0; /* Remove bottom margin as gap handles spacing */
+    cursor: pointer; /* Make the whole wrapper clickable */
+    border-radius: var(--chakra-radii-md); /* Optional: add border radius to wrapper */
+    overflow: hidden; /* Ensure image corners are rounded if wrapper has radius */
+    border: 1px solid var(--cyberpunk-border); /* Optional: subtle border around square */
+    transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.public-profile-layout .left-column .event-card-wrapper:hover {
+    /* transform: scale(1.03); */ /* Remove hover effect */
+    border-color: var(--cyberpunk-accent); /* Highlight border on hover */
+}
+
+
+/* Remove styling from the inner card div as wrapper handles it */
+.public-profile-layout .left-column .event-card {
+    padding: 0;
+    border: none;
+    background: none;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: block; /* Ensure it takes full space of wrapper */
+}
+
+/* Make the event image square and cover the area */
+.public-profile-layout .left-column .event-image {
+    display: block; /* Remove extra space below image */
+    width: 100%;
+    height: auto; /* Height adjusts based on width */
+    aspect-ratio: 1 / 1; /* Make it square */
+    object-fit: cover; /* Cover the square area */
+    margin-bottom: 0; /* Remove default margin */
+    border-radius: 0; /* Image fills the wrapper, wrapper handles radius */
+}
+
+/* Hide elements not needed in the grid view */
+.public-profile-layout .left-column .event-creator-info,
+.public-profile-layout .left-column .event-card-details {
+    display: none;
+}
+
+/* === END: Public Profile Event Grid Styles === */
+
+/* === Modal Styles === */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050; /* Ensure it's above other content */
+    padding: var(--chakra-space-4);
+}
+
+.modal-content {
+    background-color: var(--cyberpunk-dark-gray); /* Use dark gray */
+    border: 1px solid var(--cyberpunk-border);
+    border-radius: var(--chakra-radii-md);
+    padding: var(--chakra-space-6);
+    max-width: 500px; /* Max width like reference */
+    width: 100%;
+    max-height: 80vh; /* Limit height */
+    overflow-y: auto; /* Allow scrolling for content */
+    position: relative;
+    z-index: 1051;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between; /* Pushes title left, button right */
+    align-items: center;
+    margin-bottom: var(--chakra-space-4);
+    padding-bottom: var(--chakra-space-4);
+    border-bottom: 1px solid var(--cyberpunk-border); /* Separator line */
+}
+
+.modal-title {
+    color: var(--cyberpunk-accent);
+    font-size: var(--chakra-fontSizes-xl);
+    font-weight: 700;
+    margin: 0; /* Reset default heading margin */
+}
+
+.modal-close-button {
+    background: none;
+    border: none;
+    color: var(--cyberpunk-accent);
+    font-size: 1.5rem; /* Make X larger */
+    cursor: pointer;
+    padding: 0.25rem; /* Small padding for click area */
+    margin: 0; /* Reset button margin */
+    width: auto; /* Override default button width */
+    line-height: 1;
+    transition: color 0.2s ease-in-out;
+}
+
+.modal-close-button:hover {
+    color: var(--cyberpunk-light-gray);
+    background: none; /* Ensure no background on hover */
+}
+
+.modal-body {
+    /* Styles for the content area */
+    /* Example: comment list styles would go here or be applied to children */
+}
+
+/* Example style for comment items within modal */
+.modal-body .comment-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--chakra-space-4);
+    padding: var(--chakra-space-4) 0;
+    border-bottom: 1px solid var(--cyberpunk-border);
+}
+
+.modal-body .comment-item:last-child {
+    border-bottom: none;
+}
+
+.modal-body .comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid var(--cyberpunk-light-gray);
+}
+
+.modal-body .comment-content {
+    flex-grow: 1;
+}
+
+.modal-body .comment-user {
+    font-weight: 700;
+    color: var(--cyberpunk-accent);
+    margin-right: var(--chakra-space-2);
+}
+
+.modal-body .comment-text {
+    color: var(--chakra-colors-gray-200);
+    margin-bottom: var(--chakra-space-1);
+}
+
+.modal-body .comment-meta {
+    font-size: 0.85rem;
+    color: var(--cyberpunk-light-gray);
+}
+
+.modal-body .comment-meta span {
+    margin-right: var(--chakra-space-2);
+}
+
+.modal-body .comment-reply-button {
+    background: none;
+    border: none;
+    color: var(--cyberpunk-accent);
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.modal-body .comment-reply-button:hover {
+    text-decoration: underline;
+    background: none;
+}
+
+/* === END Modal Styles === */
+
+/* === View Event Page Layout === */
+.view-event-layout-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Adjust ratio (e.g., 60% image, 40% details) */
+    gap: var(--chakra-space-8);
+    max-width: 1200px; /* Or adjust as needed */
+    margin: var(--chakra-space-8) auto;
+    padding: var(--chakra-space-6);
+    background-color: var(--cyberpunk-dark-gray); /* Container background */
+    border: 1px solid var(--cyberpunk-border);
+    border-radius: var(--chakra-radii-md);
+    position: relative; /* For background canvas */
+    z-index: 1;
+    align-items: start; /* Align items at the top */
+}
+
+/* Left Column (Image) */
+.view-event-left-column {
+    width: 100%;
+    height: auto;
+    max-height: 80vh; /* Limit image height */
+    overflow: hidden; /* Hide overflow if image is too tall */
+    display: flex;
+    align-items: center; /* Vertically center placeholder text */
+    justify-content: center; /* Horizontally center placeholder text */
+    background-color: var(--cyberpunk-black); /* Background for the column */
+    border-radius: var(--chakra-radii-md); /* Match container rounding */
+}
+
+.view-event-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Fit image within the bounds, preserving aspect ratio */
+    border-radius: var(--chakra-radii-md); /* Rounded corners for the image */
+}
+
+.view-event-image.placeholder {
+    padding: var(--chakra-space-8);
+    color: var(--cyberpunk-light-gray);
+    font-style: italic;
+}
+
+/* Right Column (Details) */
+.view-event-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--chakra-space-4); /* Space between elements in the right column */
+    height: 100%; /* Allow column to fill height */
+}
+
+/* Style creator info similarly to event card header */
+.view-event-creator {
+    /* Uses .event-creator-info styles by default */
+    margin-bottom: var(--chakra-space-2); /* Add some space below creator */
+    padding: 0; /* Override potential padding */
+}
+
+.view-event-title {
+    font-size: var(--chakra-fontSizes-2xl); /* Large title */
+    color: var(--cyberpunk-accent);
+    font-weight: 700;
+    margin-bottom: var(--chakra-space-2); /* Less space below title */
+    text-align: left; /* Align title left */
+}
+
+.view-event-date {
+    font-size: var(--chakra-fontSizes-md);
+    color: var(--cyberpunk-light-gray);
+    margin-bottom: var(--chakra-space-4);
+}
+
+.view-event-description {
+    font-size: var(--chakra-fontSizes-md);
+    color: var(--chakra-colors-gray-200);
+    white-space: pre-wrap; /* Respect line breaks */
+    margin-bottom: var(--chakra-space-6);
+    flex-grow: 1; /* Allow description to take available space */
+    line-height: 1.6;
+}
+
+/* Interaction Bar within ViewEvent */
+.view-event-right-column .interaction-bar-container {
+    margin-top: auto; /* Push interaction bar towards the bottom */
+    margin-bottom: var(--chakra-space-4); /* Space before back button */
+    padding: var(--chakra-space-3) 0; /* Keep original padding */
+}
+
+/* Back Button */
+.view-event-back-button {
+    /* Uses .secondary button styles by default */
+    margin-top: 0;
+    width: auto;
+    /* align-self: flex-start; */ /* Let container handle alignment */
+}
+
+/* Button Container */
+.view-event-button-container {
+    display: flex;
+    gap: var(--chakra-space-4); /* Space between buttons */
+    margin-top: var(--chakra-space-4); /* Space above buttons */
+    align-items: center; /* Align buttons vertically */
+    justify-content: flex-start; /* Align buttons to the left */
+}
+
+/* Ensure buttons in container don't have extra top margin */
+.view-event-button-container button {
+    margin-top: 0;
+}
+
+/* RSVP Button (uses default primary button style) */
+.view-event-rsvp-button {
+     /* Add specific styles if needed, otherwise uses default button */
+     width: auto; /* Size to content */
+}
+
+/* Loading/Error states */
+.loading-message,
+.view-event-error {
+    text-align: center;
+    padding: var(--chakra-space-8);
+    color: var(--cyberpunk-light-gray);
+    min-height: 200px; /* Give some height */
+    display: flex;
+    flex-direction: column; /* Stack error and button */
+    align-items: center;
+    justify-content: center;
+}
+
+.view-event-error {
+    background-color: var(--cyberpunk-dark-gray);
+    border: 1px solid var(--cyberpunk-border);
+    border-radius: var(--chakra-radii-md);
+    margin: var(--chakra-space-8) auto;
+    max-width: 500px;
+}
+
+.view-event-error .error-message {
+    margin-bottom: var(--chakra-space-4);
+}
+/* === END View Event Page Layout === */
+
+/* Top Navigation Container */
+.top-nav-container {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    justify-content: space-between; /* Space out left, center, right */
+    padding: var(--chakra-space-3) var(--chakra-space-6); /* Vertical padding, Horizontal padding */
+    background-color: var(--cyberpunk-black);
+    border-bottom: 1px solid var(--cyberpunk-border); /* Add bottom border */
+    position: fixed; /* Keep it at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100; /* Ensure it stays on top */
+    height: 60px; /* Give it a fixed height */
+}
+
+/* Layout within TopNav */
+.top-nav-left,
+.top-nav-center,
+.top-nav-right {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent sections from shrinking */
+}
+
+.top-nav-left {
+    flex-grow: 0; /* Don't grow */
+}
+
+.top-nav-center {
+    flex-grow: 1; /* Allow search to take up available space */
+    justify-content: center; /* Center the search bar within its space */
+    padding: 0 var(--chakra-space-4); /* Add some padding around search */
+}
+
+.top-nav-right {
+    flex-grow: 0; /* Don't grow */
+    justify-content: flex-end; /* Align button to the right */
+}
+
+.app-logo-top-nav {
+    height: 35px; /* Adjust logo size */
+    width: auto;
+    display: block;
+}
+
+.top-nav-center .global-search-container {
+    width: 100%; /* Make search container take full width of center section */
+    max-width: 500px; /* Optional: Limit max width of search */
+    margin: 0; /* Remove default margins if any */
+}
+
+.top-nav-center .global-search-input {
+    height: 38px; /* Match button height */
+    font-size: 0.9rem;
+    padding-left: 3rem; /* Keep space for icon */
+    padding-right: 1rem;
+}
+
+.top-nav-center .global-search-icon-wrapper {
+    left: 1rem;
+    height: 38px; /* Match input height */
+}
+
+.top-nav-center .global-search-svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Style for the specific login button in TopNav */
+.topnav-login-button {
+    padding: 0.4rem 0.8rem; /* Reduced padding: Vertical Horizontal */
+    font-size: 0.9rem; /* Slightly smaller font */
+    width: auto; /* Override default full width */
+    margin: 0; /* Remove default margins */
+    height: 38px; /* Give it a fixed height */
+    white-space: nowrap; /* Prevent text wrapping */
+    border-color: var(--cyberpunk-light-gray);
+}
+
+.topnav-login-button:hover {
+    background-color: var(--cyberpunk-accent);
+    color: var(--cyberpunk-black);
+    border-color: var(--cyberpunk-accent);
+}
+
+/* Adjust main content padding to account for fixed TopNav */
+.main-content {
+    padding-top: 80px; /* Height of TopNav (60px) + some extra space (20px) */
+    padding-bottom: 80px; /* Add padding for IconNav at bottom */
+    /* Remove margin-left/right if they exist */
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Adjust IconNav position if needed */
+.icon-nav-container {
+    /* Optional: Adjust top if IconNav is also fixed */
+    /* top: 70px; */
+    /* transform: translateY(0); */ /* Remove vertical centering if top is set */
+}
+
+/* Add inset shadow to various event images */
+.view-event-image,
+.left-column .event-image,
+.public-profile-layout .left-column .event-image,
+.event-item-thumbnail {
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.5); /* Increased prominence */
+}
